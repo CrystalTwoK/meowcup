@@ -1,22 +1,22 @@
-<div style="border: 1px solid black; margin: 10px; padding-left: 20px">
+<div class="guild-container col-sm-6 col-md-6 col-lg-4 col-xl-3 text-center">
     <% if (guild.icon != null) { %>
         <% if (guild.icon.substring(0,2) === 'a_') { %>
-            <img src="https://cdn.discordapp.com/icons/<%= guild.id %>/<%= guild.icon%>.gif"/>
+            <img class="guild-icon " src="https://cdn.discordapp.com/icons/<%= guild.id %>/<%= guild.icon%>.gif"/>
             <% } else { %>
-                <img src="https://cdn.discordapp.com/icons/<%= guild.id %>/<%= guild.icon%>.png"/>
+                <img class="guild-icon" src="https://cdn.discordapp.com/icons/<%= guild.id %>/<%= guild.icon%>.png"/>
                 <% } %>
     <% } else { %>
 
-        <img src="https://i.imgur.com/bMaLqzT.png" width="120px">
+        <img class="guild-icon" src="https://i.imgur.com/bMaLqzT.png" width="120px">
         <% } %>
-  <h4><%- guild.name %></h4>
-  <p><%- guild.id %></p>
-
-  <%if (guild.owner) {%>
-    <span style="color: red; font-weight: bold;">OWNER</span>
-  <% } %>
-
-  <ul>
+  <h4 class="guild-name"><%- guild.name %></h4>
+  <p class="guild-id"><%- guild.id %></p>
+  <span class="arrow"></span>
+  
+<!-- 
+  <p><button type="button" class="invite-button btn btn-dark" name="<%- guild.id %>">INVITE</button></p>
+<p><button type="button" class="invite-button btn btn-dark" name="<%- guild.id %>">MANAGE</button></p> -->
+  <!-- <ul>
 
     <% guild.features.forEach(feature =>{ %>
 
@@ -24,7 +24,7 @@
 
     <% })  %>
 
-  </ul>
+  </ul> -->
 
 
 </div>

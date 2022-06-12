@@ -15,17 +15,32 @@ passport.use(
     {
       clientID: DISCORD_CLIENT_ID,
       clientSecret: DISCORD_CLIENT_SECRET,
-      callbackURL: "http://www.meowcup.it/auth/redirect",
+      callbackURL: "/auth/redirect",
       scope: ["identify", "email", "guilds"],
     },
     async (acessToken, refreshToken, profile, done) => {
       try {
-        //Controlla se e' gia' presente l'utente all'interno del database
-        const user = await User.findOne({ discordId: profile.id });
-        console.log(profile);
+        const query = { discordId: profile.id };
+        const user = await User.findOne(query);
+        //Controlla se e' gia' presente l'utente all'interno del database ed in caso aggiunge un utente nuovo al database
+        if (user) {
+          const updatedSchema = {
+            discordId: profile.id,
+            username: profile.username + profile.discriminator,
+            email: profile.email,
+            guilds: profile.guilds,
+          };
 
-        if (user) return done(null, user); //Return User se e' gia' presente, altrimenti creane uno nuovo > newUser
+          const updatedUser = await User.findOneAndUpdate(
+            query,
+            updatedSchema,
+            { new: true }
+          );
+          await updatedUser.save();
+          console.log(log.db + "User updated");
 
+          return done(null, updatedUser);
+        }
         const newUser = new User({
           discordId: profile.id,
           username: profile.username + profile.discriminator,
@@ -34,7 +49,7 @@ passport.use(
         });
 
         await newUser.save();
-        console.log("Utente salvato all'interno del database");
+        console.log(log.db + "New user saved");
 
         done(null, newUser);
       } catch (e) {

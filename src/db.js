@@ -5,8 +5,8 @@ const { MONGODB_URI } = require("./config");
 
 connect(MONGODB_URI)
   .then(() => {
-    console.log("MongoDB Connected.");
+    console.log(log.db + "MongoDB Connected.");
   })
   .catch((e) => {
-    console.log(e);
+    console.log(log.error + e);
   });
