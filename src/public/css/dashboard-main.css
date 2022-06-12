@@ -56,14 +56,6 @@ body{
     overflow-x: hidden;
 }
 
-@media (max-width: 991px){
-body{
-    background-size: 750% !important;
-}
-.footer .bot-footer{
-    font-size: 0.8em;
-}
-}
 
 p{
     color: white;
@@ -192,7 +184,7 @@ p span{
     font-style: normal !important;
     font-weight: 600 !important;
     font-size: 16px !important;
-    line-height: 5px !important;
+    line-height: 20px !important;
     letter-spacing: 0.15em !important;
     font-variant: small-caps !important;
   }
@@ -206,3 +198,16 @@ p span{
     text-align: center !important;
     color: #a2a8bd !important;
   }
+
+
+@media (max-width: 991px){
+    body{
+        background-size: 750% !important;
+    }
+    .footer .bot-footer{
+        font-size: 0.8em;
+    }
+    .footer .nouridio{
+        font-size: 0.8em !important;
+    }
+    }
