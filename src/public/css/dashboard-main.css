@@ -174,6 +174,7 @@ p span{
     padding: 5px 6px !important;
     color: #ecf2ff;
     padding: 30px 30px !important;
+    padding-bottom: 0px !important;
     margin-top: 30px !important;
     position: relative;
     height: 20vh;
@@ -197,6 +198,7 @@ p span{
   .footer .bot-footer {
     text-align: center !important;
     color: #a2a8bd !important;
+    height: 4vh;
   }
 
 
@@ -206,15 +208,17 @@ p span{
     }
     .footer .bot-footer{
         font-size: 0.8em;
+        height: 2vh;
     }
     .footer .nouridio{
         font-size: 0.8em !important;
         line-height: 5px !important;
     }
-    }
+}
 
-    @media (max-width: 520px){
-        .footer .bot-footer{
+@media (max-width: 550px){
+     .footer .bot-footer{
             font-size: 0.6em !important;
-        }
+            height: 1vh;
     }
+ }
