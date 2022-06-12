@@ -303,6 +303,7 @@ li.item-four:hover ~ hr {
 }
 .login-btn:hover {
   background: #00ff84 !important;
+  color: #1d1e28;
 }
 .navbar {
   box-shadow: none !important;
