@@ -96,6 +96,10 @@ p span{
     max-width: 80px;
 }
 
+.guild-container .guild-icon:hover{
+    border-color: white;
+}
+
 .guild-name{
     font-size: 0.8em;
 }
