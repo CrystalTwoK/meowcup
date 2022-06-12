@@ -47,6 +47,7 @@ body{
     border-top: 6px #00ff84 solid !important;
     background-color: #2d2d37 !important;
     padding: 30px 60px;
+    padding-bottom: 0 !important;
     background-image: url("../assets/wavy-blackdark-by-nouridio.svg") !important;
     background-repeat: no-repeat;
     background-size: 400% !important;
