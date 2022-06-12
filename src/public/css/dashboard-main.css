@@ -209,11 +209,12 @@ p span{
     }
     .footer .nouridio{
         font-size: 0.8em !important;
+        line-height: 5px !important;
     }
     }
 
     @media (max-width: 520px){
         .footer .bot-footer{
-            font-size: 0.6em;
+            font-size: 0.6em !important;
         }
     }
