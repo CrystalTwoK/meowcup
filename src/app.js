@@ -4,6 +4,7 @@ const session = require("express-session");
 const passport = require("passport");
 const MongoStore = require("connect-mongo");
 const { MONGODB_URI, SECRET } = require("./config");
+const { isAdmin } = require("./utils/adminChecker");
 require("./strategies/discord.strategy");
 
 const app = express();
@@ -30,6 +31,9 @@ try {
   //Global Variables
   app.use((req, res, next) => {
     app.locals.user = req.user;
+    app.locals.admin = (param) => {
+      return isAdmin(param);
+    };
     next();
   });
 

@@ -2,7 +2,7 @@ const app = require("./app");
 require("dotenv").config();
 require("colors");
 const { PORT } = require("./config");
-require("./db");
+
 const Discord = require("discord.js");
 
 global.client = new Discord.Client({
@@ -23,9 +23,16 @@ global.log = {
   db: `${"[MEOWCUP]".green} >>> ${"DATABASE".blue} >>> `,
   system: `${"[MEOWCUP]".green} >>> ${"SYSTEM".green} >>> `,
 };
-console.clear();
 
+global.token = process.env.TOKEN;
 global.db = process.env.DB;
 
-app.listen(PORT);
-console.log(log.system + `Server is running on port ${PORT}`);
+client.login(token);
+
+client.on("ready", () => {
+  console.clear();
+  console.log(log.system + "MEOWCUP Discord Client ready.");
+  require("./db");
+  app.listen(PORT);
+  console.log(log.system + `Server is running on port ${PORT}`);
+});
