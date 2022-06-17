@@ -1,6 +1,6 @@
 const { Permissions } = require("discord.js");
 
-checkAdmin = (bitfield = 0) => {
+const checkAdmin = (bitfield = 0) => {
   let permissionsArray = [];
   const objectLength = Object.keys(Permissions.FLAGS).length;
   const permessi = Object.keys(Permissions.FLAGS);

@@ -44,20 +44,20 @@
 }
 
 body{
-    border-top: 6px #00ff84 solid !important;
-    background-color: #2d2d37 !important;
-    padding: 30px 60px;
-    background-image: url("../assets/wavy-blackdark-by-nouridio.svg") !important;
-    background-repeat: no-repeat;
-    background-size: 400% !important;
-    background-position: bottom !important;
-    min-height: 65vh;
+    background-color: #1a1a1d !important;
+    background-image: url("../assets/meow_texture_website_transparent.png") !important;
+    background-repeat: repeat;
+    background-size: 15%;
+    width: 100%;
+    height: 100vh;
     overflow-x: hidden;
 }
 
 
 p{
     color: white;
+    padding: 0 !important;
+    margin: 0 !important;
 }
 p span{
     font-weight: 750;
@@ -67,6 +67,7 @@ p span{
 .title{
     color: var(--green);
     font-weight: 800;
+    font-size: 0.8em;
 }
 
 .owner-label{
@@ -74,63 +75,138 @@ p span{
     color: red
 }
 
-.guild-grid.row{
-    min-height: 100vh;
-    min-width: 100%;
-}
-
-.guild-container{
-    background-color: var(--guild-background-color);
-    color: white;
-    padding-top: 30px;
-    padding-bottom: 30px;
-    margin-bottom: 30px;;
-    border-bottom: 4px solid var(--green);
-}
-
-.guild-container .guild-icon{
-    border-radius: 50%;
-    border: 4px solid var(--green);
-    cursor: pointer;
-    margin-bottom: 30px;
-    max-width: 80px;
-}
-
-.guild-container .guild-icon:hover{
-    border-color: white;
-}
-
-.guild-name{
-    font-size: 0.8em;
-}
-
-.guild-id{
-    font-weight: 300 italic;
-    color: grey;
-    font-size: 0.65em;
-}
-
-.arrow{
-    display: inline-block;
-    width: 15px;
-    height: 15px;
-    border-left: 4px solid var(--green);
-    border-bottom: 4px solid var(--green);
-    transform: rotate(-45deg);
-    box-sizing: border-box;
+.row{
     margin: 0;
-    transition: all 0.2s ease-in-out;
+    padding: 0;
 }
 
-.arrow:hover{
+.top-grid.row{
+    height: 10vh!important;
+    width: 100%;
+    background-color: var(--guild-background-color)
+}
+
+.top-grid .top-left{
+  width: 20%;
+  border-right: 1px solid black;
+}
+
+.top-grid .top-right{
+  width: 80%;
+}
+
+.top-grid .top-left .title{
+  top: 30px;
+  left: 10px;
+  font-size: 2em !important;
+}
+
+.top-grid .top-left .subtitle{
+  top: 15px;
+  left: 10px;
+  font-size: 1.4em;
+  font-weight: 800;
+  color: white;
+}
+
+.subtitle span{
+  color: red;
+  font-size: 2.3;
+  font-weight: 900;
+}
+
+.guild-grid.row{
+    height: 90vh !important;
+    width: 100%;
+}
+
+#left-container {
+    background-color: var(--guild-background-color);
+    height: 90%;
+    width: 20%;
+    position: absolute;
+    overflow-y: scroll;
+    padding: 0 10px;
+    border-right: 1px solid black;
+  }
+
+   /* ===== Scrollbar CSS ===== */
+  /* Firefox */
+  #left-container{
+    scrollbar-width: auto;
+    scrollbar-color: #00ff84 #ffffff;
+  }
+  
+  /* Chrome, Edge, and Safari */
+  #left-container::-webkit-scrollbar {
+    width: 5px;
+  }
+  
+  #left-container::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  #left-container::-webkit-scrollbar-thumb {
+    background-color: #00ff84;
+    border-radius: 20px;
+    border: 6px solid transparent;
+  }
+  
+
+  #left-container #guild-button {
+    background-color: var(--guild-background-color);
+    border-radius: 10px;;
+    transition: all 0.3s ease-in-out;
+    margin: 5px 0px;
+    padding-left: 5px !important;
+    display: flex;
+    align-items:flex-start;
+    overflow: hidden;
     cursor: pointer;
-    border-color: white;
-}
+  }
+  #left-container #guild-button:hover{
+    background-color: #008e49;
+  }
 
-.invite-button{
-    border: 2px solid var(--green);
-    color: var(--green);
-}
+  #left-container #guild-button:hover + .guild-icon{
+    border-color: white;
+  }
+
+  #left-container .row .col-2 {
+    padding-right: 10px;
+  }
+
+  #left-container .row .col-2 .guild-icon{
+    width: 50px;
+    border: 3px solid var(--green);
+    margin: 5px 0px;
+    border-radius: 50%;
+  }
+
+  #left-container .row .col-10{
+    padding-top: 15px !important;
+    padding-left: 20px !important;
+  }
+
+  #left-container .row .guild-name{
+    font-size: 0.7em;
+    font-weight: 600;
+  }
+
+  #left-container .row .guild-id{
+    font-size: 0.6em;
+    font-weight: 300;
+    color: #ffffff;
+  }
+  
+  #right-container {
+    position: absolute;
+    height:90%;
+    overflow-y: scroll;
+    width: 80%;
+    right: 0;
+    bottom: 0;
+  }
 
 .btn-logout{
     border-radius: 10px !important;
@@ -145,7 +221,7 @@ p span{
     cursor: pointer;
     right: 0;
     top: 0;
-    margin: 60px 60px;
+    margin: 20px 20px;
     position: absolute;
 }
 
@@ -168,6 +244,25 @@ p span{
 }
 
 #no-server div p {
+    color: #3c3c49 !important; 
+}
+
+
+#no-server-selected{
+    height: auto;
+    font-size: 3em; 
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;    
+}
+
+
+#no-server-selected div {
+    padding-bottom: 10vh;
+}
+
+#no-server-selected div p {
     color: #3c3c49 !important; 
 }
 
