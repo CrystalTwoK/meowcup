@@ -14,8 +14,9 @@
     <div class="top-grid row">
       
       <div class="col-2 top-left">
-        <h1 class="title">DASHBOARD</h1>
-        <h1 class="subtitle"> <span><%= user.username.substring(0, user.username.length-4); %> </span></h1>
+        <div class="bg" style="background-image: url('https://cdn.discordapp.com/avatars/<%= user.discordId %>/<%= user.avatar %>.png');"></div>
+        <h1 class="title"><span style="color: red;"> <%= user.username %></span></h1>
+        <!-- <h1 class="subtitle"> <span><%= user.username.substring(0, user.username.length-4); %> </span></h1> -->
       </div>
       <div class="col-10 top-right">
         
@@ -27,7 +28,7 @@
         </svg> LOGOUT</button></div>
     </div> 
     <div class="guild-grid row">
-  
+      
       <% let ownedGuilds = [] %>
       <% user.guilds.forEach((guild) =>{ %>
         <% if (admin(guild.permissions)){ %>
@@ -55,9 +56,29 @@
               <p><svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" fill="currentColor" class="bi bi-heartbreak-fill" viewBox="0 0 16 16">
                 <path fill-rule="evenodd" d="M8.931.586 7 3l1.5 4-2 3L8 15C22.534 5.396 13.757-2.21 8.931.586ZM7.358.77 5.5 3 7 7l-1.5 3 1.815 4.537C-6.533 4.96 2.685-2.467 7.358.77Z"/>
               </svg></p>
-              <p> GUILD SETTINGS </p>
+              <p>  GUILD SETTINGS NOT FOUND </p>
             </div>
           </div>
+
+          <div id="no-server-selected" class="col-12 text-center"> 
+            <div>
+              <p><svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" fill="currentColor" class="bi bi-heartbreak-fill" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M8.931.586 7 3l1.5 4-2 3L8 15C22.534 5.396 13.757-2.21 8.931.586ZM7.358.77 5.5 3 7 7l-1.5 3 1.815 4.537C-6.533 4.96 2.685-2.467 7.358.77Z"/>
+              </svg></p>
+              <p> GUILD SETTINGS NOT FOUND </p>
+            </div>
+          </div>
+
+          <div id="no-server-selected" class="col-12 text-center"> 
+            <div>
+              <p><svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" fill="currentColor" class="bi bi-heartbreak-fill" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M8.931.586 7 3l1.5 4-2 3L8 15C22.534 5.396 13.757-2.21 8.931.586ZM7.358.77 5.5 3 7 7l-1.5 3 1.815 4.537C-6.533 4.96 2.685-2.467 7.358.77Z"/>
+              </svg></p>
+              <p> GUILD SETTINGS NOT FOUND </p>
+            </div>
+          </div>
+
+
         </div>
       <% } %>
 
@@ -65,5 +86,4 @@
       
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
-  </body>
 </html>

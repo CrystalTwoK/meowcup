@@ -67,7 +67,25 @@ p span{
 .title{
     color: var(--green);
     font-weight: 800;
-    font-size: 0.8em;
+    font-size: 1.2em !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+}
+
+.title span {
+  width: 20%;
+  height: 7vh;
+  color: var(--green)!important;
+  font-size: 0.8em;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .owner-label{
@@ -81,14 +99,29 @@ p span{
 }
 
 .top-grid.row{
-    height: 10vh!important;
+    height: 7vh!important;
     width: 100%;
     background-color: var(--guild-background-color)
 }
 
-.top-grid .top-left{
+.top-grid .top-left{      
   width: 20%;
   border-right: 1px solid black;
+  display: flex;
+  align-items: center;
+  padding: 0;
+}
+
+.top-grid .top-left .bg{
+  width: 100%;
+  background-color: red;
+  height: 100%;
+  background-repeat: no-repeat; 
+  background-size: 100%; 
+  background-position: center;
+  filter: blur(3px);
+  -webkit-filter: blur(3px);
+
 }
 
 .top-grid .top-right{
@@ -116,13 +149,13 @@ p span{
 }
 
 .guild-grid.row{
-    height: 90vh !important;
+    height: 83vh !important;
     width: 100%;
 }
 
 #left-container {
     background-color: var(--guild-background-color);
-    height: 90%;
+    height: 93vh;
     width: 20%;
     position: absolute;
     overflow-y: scroll;
@@ -154,7 +187,9 @@ p span{
   
 
   #left-container #guild-button {
-    background-color: var(--guild-background-color);
+    /* background-color: var(--guild-background-color); */
+    background: rgb(0,255,132);
+background: linear-gradient(90deg, rgba(0,255,132,1) 0%, rgba(0,212,255,0) 43%);
     border-radius: 10px;;
     transition: all 0.3s ease-in-out;
     margin: 5px 0px;
@@ -165,11 +200,15 @@ p span{
     cursor: pointer;
   }
   #left-container #guild-button:hover{
-    background-color: #008e49;
+    background-color: var(--green);
   }
 
-  #left-container #guild-button:hover + .guild-icon{
-    border-color: white;
+  #left-container #guild-button.active{
+    background-color: var(--green);
+  }
+
+  #left-container #guild-button:hover p{
+    color: black;
   }
 
   #left-container .row .col-2 {
@@ -178,7 +217,7 @@ p span{
 
   #left-container .row .col-2 .guild-icon{
     width: 50px;
-    border: 3px solid var(--green);
+    /* border: 3px solid var(--green); */
     margin: 5px 0px;
     border-radius: 50%;
   }
@@ -201,7 +240,8 @@ p span{
   
   #right-container {
     position: absolute;
-    height:90%;
+    height:93vh;
+    padding: 0;
     overflow-y: scroll;
     width: 80%;
     right: 0;
@@ -221,7 +261,7 @@ p span{
     cursor: pointer;
     right: 0;
     top: 0;
-    margin: 20px 20px;
+    margin: 7px 8px;
     position: absolute;
 }
 
@@ -249,7 +289,11 @@ p span{
 
 
 #no-server-selected{
-    height: auto;
+  background-color: rgba(31, 31, 39, 0.3);
+  border: 1px solid var(--green);
+  margin: 30px;
+    width: 95%;
+    height: 95%;
     font-size: 3em; 
     font-weight: 800;
     display: flex;

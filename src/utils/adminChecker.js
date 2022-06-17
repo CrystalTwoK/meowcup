@@ -4,18 +4,19 @@ const checkAdmin = (bitfield = 0) => {
   let permissionsArray = [];
   const objectLength = Object.keys(Permissions.FLAGS).length;
   const permessi = Object.keys(Permissions.FLAGS);
-  console.log(permessi);
+  // console.log(permessi);
   for (let i = objectLength - 1; i >= 0; i--) {
     const result = parseInt(Permissions.FLAGS[permessi[i]]);
     if (result <= bitfield) {
       bitfield = bitfield - result;
       permissionsArray.push(permessi[i]);
-      console.log(i + " > MATCH!" + " " + permessi[i] + " " + bitfield);
-    } else if (bitfield == 0) {
-      console.log("CONCLUSO! " + bitfield);
-    } else {
-      console.log(i + " NON MATCHED!!" + " " + permessi[i] + " " + bitfield);
+      // console.log(i + " > MATCH!" + " " + permessi[i] + " " + bitfield);
     }
+    // } else if (bitfield == 0) {
+    //   console.log("CONCLUSO! " + bitfield);
+    // } else {
+    //   console.log(i + " NON MATCHED!!" + " " + permessi[i] + " " + bitfield);
+    // }
   }
   return permissionsArray;
 };

@@ -22,11 +22,14 @@ passport.use(
       try {
         const query = { discordId: profile.id };
         const user = await User.findOne(query);
+        // console.log(profile);
         //Controlla se e' gia' presente l'utente all'interno del database ed in caso aggiunge un utente nuovo al database
         if (user) {
           const updatedSchema = {
             discordId: profile.id,
-            username: profile.username + profile.discriminator,
+            username: profile.username,
+            discriminator: `#${profile.discriminator}`,
+            avatar: profile.avatar,
             email: profile.email,
             guilds: profile.guilds,
           };
@@ -43,7 +46,9 @@ passport.use(
         }
         const newUser = new User({
           discordId: profile.id,
-          username: profile.username + profile.discriminator,
+          username: profile.username,
+          discriminator: `#${profile.discriminator}`,
+          avatar: profile.avatar,
           email: profile.email,
           guilds: profile.guilds,
         });
